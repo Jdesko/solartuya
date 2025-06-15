@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor Tuya Cloud</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>🏠 Tuya</h1>
+            <p>Monitor de Dispositivos IoT</p>
+        </div>
+
+        <!-- Página de Login -->
+        <div class="page active" id="loginPage">
+            <div class="message" id="messageBox"></div>
+            
+            <div class="form-group">
+                <label for="clientId">Client ID</label>
+                <input type="text" id="clientId" placeholder="Access ID da Tuya Cloud" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="clientSecret">Client Secret</label>
+                <input type="password" id="clientSecret" placeholder="Access Secret da Tuya Cloud" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="deviceId">Device ID</label>
+                <input type="text" id="deviceId" placeholder="ID do dispositivo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="region">Região</label>
+                <select id="region">
+                    <option value="https://openapi.tuyaeu.com">Europa (eu)</option>
+                    <option value="https://openapi.tuyaus.com">Estados Unidos (us)</option>
+                    <option value="https://openapi.tuyacn.com">China (cn)</option>
+                </select>
+            </div>
+            
+            <div class="info-box">
+                ℹ️ <strong>Como obter credenciais:</strong><br>
+                1. Acesse o <strong>Tuya Developer Console</strong><br>
+                2. Crie uma aplicação na seção "Cloud"<br>
+                3. Obtenha o Access ID e Secret<br>
+                4. Encontre o Device ID no app Tuya Smart
+            </div>
+            
+            <button class="btn" id="loginBtn">🔐 Conectar à Tuya Cloud</button>
+        </div>
+
+        <!-- Página do Dashboard -->
+        <div class="page" id="dashboardPage">
+            <div class="connection-status">
+                <div class="connection-dot"></div>
+                Conectado à Tuya Cloud
+            </div>
+
+            <div style="text-align: center; margin-bottom: 1rem;">
+                <button class="btn refresh-btn" id="refreshBtn">🔄 Atualizar Dados</button>
+                <button class="btn logout-btn" id="logoutBtn">🚪 Sair</button>
+            </div>
+
+            <div id="deviceData">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    Carregando dados do dispositivo...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "tuya-smart-dashboard",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "cd server && npm start",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "install-all": "npm install && cd server && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seu-usuario/tuya-smart-dashboard.git"
+  },
+  "author": "Seu Nome",
+  "license": "MIT"
+}
